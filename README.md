@@ -1,2 +1,2 @@
-# writing-testable-code
-Sample code for course on writing testable code
+# Writing Testable Code
+Sample code for my course on writing testable code
