@@ -14,4 +14,4 @@ This demo application uses the following technologies
 
 ## Other versions
 For other versions of this sample application, please see the following:
- - [.NET Framework 4.5](https://https://github.com/matthewrenze/writing-testable-code/tree/v4.5)
+ - [.NET Framework 4.5](https://github.com/matthewrenze/writing-testable-code/tree/v4.5)
