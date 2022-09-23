@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AutoMoq;
 using Moq;
+using Moq.AutoMock;
 using NUnit.Framework;
 using TestableCodeDemos.Module3.Shared;
 
@@ -14,7 +14,7 @@ namespace TestableCodeDemos.Module3.Easy
     public class InvoiceWriterTests
     {
         private InvoiceWriter _writer;
-        private AutoMoqer _mocker;
+        private AutoMocker _mocker;
         private Invoice _invoice;
 
         [SetUp]
@@ -26,9 +26,9 @@ namespace TestableCodeDemos.Module3.Easy
                 IsOverdue = false
             };
 
-            _mocker = new AutoMoqer();
+            _mocker = new AutoMocker();
 
-            _writer = _mocker.Create<InvoiceWriter>();
+            _writer = _mocker.CreateInstance<InvoiceWriter>();
         }
 
         [Test]
