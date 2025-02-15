@@ -8,7 +8,7 @@ namespace TestableCodeDemos.Module5.Easy
 {
     public class Program
     {
-        static void Main_(string[] args)
+        static void Main(string[] args)
         {
             var invoiceId = int.Parse(args[0]);
 

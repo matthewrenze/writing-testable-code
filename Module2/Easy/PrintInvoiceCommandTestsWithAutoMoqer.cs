@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMoq;
 using Moq;
-using Moq.AutoMock;
 using NUnit.Framework;
 using TestableCodeDemos.Module2.Shared;
 
 namespace TestableCodeDemos.Module2.Easy
 {
     [TestFixture]
-    public class PrintInvoiceCommandTestsWithAutoMocker
+    public class PrintInvoiceCommandTestsWithAutoMoqer
     {
         private PrintInvoiceCommand _command;
-        private AutoMocker _mocker;
+        private AutoMoqer _mocker;
         private Invoice _invoice;
 
         private const int InvoiceId = 1;
@@ -28,7 +28,7 @@ namespace TestableCodeDemos.Module2.Easy
                 Total = Total
             };
 
-            _mocker = new AutoMocker();
+            _mocker = new AutoMoqer();
 
             _mocker.GetMock<IDatabase>()
                 .Setup(p => p.GetInvoice(InvoiceId))
@@ -38,7 +38,7 @@ namespace TestableCodeDemos.Module2.Easy
                 .Setup(p => p.GetNow())
                 .Returns(Date);
 
-            _command = _mocker.CreateInstance<PrintInvoiceCommand>();
+            _command = _mocker.Create<PrintInvoiceCommand>();
         }
 
         [Test]

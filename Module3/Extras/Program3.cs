@@ -9,7 +9,7 @@ namespace TestableCodeDemos.Module3.Extras
 {
     public class Program3
     {
-        static void Main_(string[] args)
+        static void Main(string[] args)
         {
             var container = new StandardKernel();
 

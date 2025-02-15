@@ -6,7 +6,7 @@ namespace TestableCodeDemos.Module1.Hard
 {
     class Program
     {
-        static void Main_Hard(string[] args)
+        static void Main(string[] args)
         {
             var parts = decimal.Parse(args[0]);
 

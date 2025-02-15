@@ -6,7 +6,7 @@ namespace TestableCodeDemos.Module3.Extras
 {
     public class Program2
     {
-        static void Main_(string[] args)
+        static void Main(string[] args)
         {
             var invoiceId = int.Parse(args[0]);
 
