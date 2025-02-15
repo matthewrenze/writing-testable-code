@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AutoMoq;
 using Moq;
+using Moq.AutoMock;
 using NUnit.Framework;
 using TestableCodeDemos.Module6.Shared;
 
@@ -14,7 +14,7 @@ namespace TestableCodeDemos.Module6.Hard
     public class PrintOrEmailInvoiceCommandTests
     {
         private PrintOrEmailInvoiceCommand _command;
-        private AutoMoqer _mocker;
+        private AutoMocker _mocker;
         private Invoice _invoice;
 
         private const int InvoiceId = 1;
@@ -26,7 +26,7 @@ namespace TestableCodeDemos.Module6.Hard
         {
             _invoice = new Invoice();
             
-            _mocker = new AutoMoqer();
+            _mocker = new AutoMocker();
 
             _mocker.GetMock<IDatabase>().
                 Setup(p => p.GetInvoice(InvoiceId))
@@ -40,7 +40,7 @@ namespace TestableCodeDemos.Module6.Hard
                 .Setup(p => p.GetUserName())
                 .Returns(UserName);
 
-            _command = _mocker.Create<PrintOrEmailInvoiceCommand>();
+            _command = _mocker.CreateInstance<PrintOrEmailInvoiceCommand>();
         }
 
         [Test]
